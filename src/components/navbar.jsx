@@ -2,17 +2,15 @@ import { BiPhoneCall } from "react-icons/bi";
 import { MdEmail, MdShoppingCart } from "react-icons/md";
 import { BsFacebook } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
-
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Transition } from "@headlessui/react";
+import NormalSwitch from "./normalSwitch";
 
 export default function Navbar() {
   return (
-    <main className="shadow">
+    <main className="shadow fixed z-10 w-full bg-white h-{74.5px}">
       <div>
-        <div className="top flex justify-between h-10 items-center max-w-[1440px] mx-auto">
-          <div className="left flex text-xs leading-normal text-text-gray tracking-wide font-medium">
+        <div className="top flex justify-between h-10 items-center max-w-[1440px] mx-auto ">
+          <div className="left flex text-xs leading-normal text-text-gray tracking-wide font-light box-border">
             <div className="flex mt-0 ">
               <span className="mr-2">Холбоо барих</span>
               <BiPhoneCall className="me-1" />
@@ -25,7 +23,7 @@ export default function Navbar() {
           </div>
           <div className="flex items-center">
             <div className="border-r border-[#f1f1f3] px-1">
-              <button className="bg-blue-500 text-white rounded-md p-1.5 my-0.5 w-full">
+              <button className="bg-blue-500 text-white rounded-md p-1.5 my-0.5 w-full font-light">
                 Нэвтрэх
               </button>
             </div>
@@ -44,7 +42,7 @@ export default function Navbar() {
       </div>
       <div className="bg-[#151847]">
         <div className="max-w-[1440px] mx-auto flex justify-between items-center">
-          <div className="py-5">
+          <div className="py-4">
             <Link href={"/"} className="text-4xl">
               <img src="https://meborny.mn/static/black.png" alt="meborny" />
             </Link>
@@ -71,10 +69,13 @@ export default function Navbar() {
                   Холбоо барих
                 </Link>
               </li>
-              <li className="px-4">
+              <li className="px-4 pe-5">
                 <Link href="/">
                   <MdShoppingCart className="text-xl" />
                 </Link>
+              </li>
+              <li className="px-4">
+                <NormalSwitch />
               </li>
             </ul>
           </div>
